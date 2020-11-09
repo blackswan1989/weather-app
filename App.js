@@ -2,12 +2,21 @@ import React from "react";
 import { Alert } from "react-native";
 import Loading from "./Loading";
 import * as Location from "expo-location";
+import axios from "axios";
 
 const API_KEY = "f2e9b29b46060b09dba2b412d6277738";
 
 export default class extends React.Component {
   state = {
     isLoading: true,
+  };
+
+  //URL을 fetch하기 위함
+  getWeather = async (latitude, longitude) => {
+    const { data } = await axios.get(
+      `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
+    );
+    console.log(data);
   };
 
   getLocation = async () => {
@@ -18,6 +27,7 @@ export default class extends React.Component {
       const {
         coords: { latitude, longitude },
       } = await Location.getCurrentPositionAsync();
+      this.getWeather(latitude, longitude);
       this.setState({ isLoading: false });
       // console.log(coords.latitude, coords.longitude);
     } catch (error) {
@@ -48,3 +58,49 @@ export default class extends React.Component {
 //5)-1 "altitude": 37.5056, "longitude": 127.08788049968794,
 
 //6) http://api.openweathermap.org/data/2.5/weather?lat=37.5056&lon=127.08788049968794&appid=f2e9b29b46060b09dba2b412d6277738
+
+/*
+NOTE console.log(data)
+Object {
+  "base": "stations",
+  "clouds": Object {
+    "all": 75,
+  },
+  "cod": 200,
+  "coord": Object {
+    "lat": 37.51,
+    "lon": 127.09,
+  },
+  "dt": 1604906337,
+  "id": 6571507,
+  "main": Object {
+    "feels_like": 277.47,
+    "humidity": 21,
+    "pressure": 1025,
+    "temp": 282.15,
+    "temp_max": 282.15,
+    "temp_min": 282.15,
+  },
+  "name": "Samjeon-dong",
+  "sys": Object {
+    "country": "KR",
+    "id": 8096,
+    "sunrise": 1604873095,
+    "sunset": 1604910366,
+    "type": 1,
+  },
+  "timezone": 32400,
+  "visibility": 10000,
+  "weather": Array [
+    Object {
+      "description": "broken clouds",
+      "icon": "04d",
+      "id": 803,
+      "main": "Clouds",
+    },
+  ],
+  "wind": Object {
+    "deg": 280,
+    "speed": 2.1,
+  },
+}*/
