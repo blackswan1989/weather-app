@@ -73,3 +73,9 @@
    - 위 사이트에서 원하는 아이콘을 가진 것을 import에 추가해준다.
    - ex)import { FontAwesome5 } from "@expo/vector-icons";
    - 아이콘 출력 : retrun (<FontAwesome5 name="cloud-rain" size={120} color="white" />);
+
+## 2.3 Background gradient
+
+1. https://docs.expo.io/versions/latest/sdk/linear-gradient/
+   - expo install expo-linear-gradient
+   - Weather.js: import { LinearGradient } from 'expo-linear-gradient';
