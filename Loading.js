@@ -16,10 +16,11 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     paddingHorizontal: 30,
     paddingVertical: 100,
-    backgroundColor: "#75CBCD",
+    backgroundColor: "#fc913a",
   },
   text: {
     color: "white",
     fontSize: 28,
+    fontWeight: "700",
   },
 });

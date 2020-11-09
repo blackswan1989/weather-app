@@ -20,9 +20,8 @@ export default class extends React.Component {
         weather,
       },
     } = await axios.get(
-      `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
+      `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${API_KEY}&units=metric`
     );
-    // console.log(data);
     this.setState({
       isLoading: false,
       condition: weather[0].main,
@@ -32,17 +31,13 @@ export default class extends React.Component {
 
   getLocation = async () => {
     try {
-      // throw Error();
       await Location.requestPermissionsAsync();
-      // console.log(response);
       const {
         coords: { latitude, longitude },
       } = await Location.getCurrentPositionAsync();
       this.getWeather(latitude, longitude);
-      this.setState({ isLoading: false });
-      // console.log(coords.latitude, coords.longitude);
     } catch (error) {
-      Alert.alert("Can't find you", "So sad");
+      Alert.alert("Can't find you.", "So sad");
     }
   };
 

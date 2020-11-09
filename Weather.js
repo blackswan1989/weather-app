@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet, StatusBar } from "react-native";
 import PropTypes from "prop-types";
-import { FontAwesome5 } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 const weatherOptions = {
   Clouds: {
@@ -92,20 +92,22 @@ export default function Weather({ temp, condition }) {
       style={styles.container}
     >
       <StatusBar barStyle="light-content" />
-      <View style={styles.halfcontainer}>
+      <View style={styles.halfContainerTop}>
         <FontAwesome5
           style={styles.icon}
           name={weatherOptions[condition].iconName}
           size={120}
           color="white"
         />
-        <Text style={styles.temp}>{`${temp}º`}</Text>
+        <Text style={styles.temp}>{temp}°</Text>
       </View>
-      <View style={{ ...styles.halfcontainer, ...styles.textContainer }}>
-        <Text style={styles.title}>{weatherOptions[condition].title}</Text>
-        <Text style={styles.subtitle}>
-          {weatherOptions[condition].subtitle}
-        </Text>
+      <View style={styles.halfContainerBottom}>
+        <View style={styles.textContainer}>
+          <Text style={styles.title}>{weatherOptions[condition].title}</Text>
+          <Text style={styles.subtitle}>
+            {weatherOptions[condition].subtitle}
+          </Text>
+        </View>
       </View>
     </LinearGradient>
   );
@@ -135,15 +137,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#4ea1d3",
+    backgroundColor: "#fc913a",
   },
-  halfcontainer: {
+  halfContainerTop: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  halfContainerBottom: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
   icon: {
     marginTop: 80,
+    marginBottom: 5,
   },
   temp: {
     marginTop: 15,
