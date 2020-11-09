@@ -27,11 +27,11 @@ const weatherOptions = {
   },
   Clear: {
     iconName: "sun",
-    gradient: ["#2980B9", "#6DD5FA"],
+    gradient: ["#2BC0E4", "#ffffff"],
   },
   Mist: {
     iconName: "cloud-download-alt",
-    gradient: ["#2c3e50", "#bdc3c7"],
+    gradient: ["#2c3e50", "#808080"],
   },
   Smoke: {
     iconName: "industry",
@@ -47,7 +47,7 @@ const weatherOptions = {
   },
   Fog: {
     iconName: "soundcloud",
-    gradient: ["#292E49", "#536976"],
+    gradient: ["#525252", "#DAD299"],
   },
   Sand: {
     iconName: "wind",
@@ -55,26 +55,29 @@ const weatherOptions = {
   },
   Squall: {
     iconName: "cloud-moon-rain",
-    gradient: ["#7F7FD5", "#91EAE4"],
+    gradient: ["#525252", "#3d72b4"],
   },
 };
 
 export default function Weather({ temp, condition }) {
   return (
     <LinearGradient
-      colors={weatherOptions["Clouds"].gradient}
+      colors={weatherOptions[condition].gradient}
       style={styles.container}
     >
       <StatusBar barStyle="light-content" />
       <View style={styles.halfcontainer}>
         <FontAwesome5
-          name={weatherOptions["Clouds"].iconName}
+          name={weatherOptions[condition].iconName}
           size={120}
           color="white"
         />
         <Text style={styles.temp}>{`${temp}º`}</Text>
       </View>
-      <View style={styles.halfcontainer}></View>
+      <View style={styles.halfcontainer}>
+        <Text style={styles.title}>Title</Text>
+        <Text style={styles.subtitle}>Subtitle</Text>
+      </View>
     </LinearGradient>
   );
 }
