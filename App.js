@@ -4,22 +4,32 @@ import Loading from "./Loading";
 import * as Location from "expo-location";
 
 export default class extends React.Component {
+  state = {
+    isLoading: true,
+  };
+
   getLocation = async () => {
     try {
       // throw Error();
       await Location.requestPermissionsAsync();
       // console.log(response);
-      const location = await Location.getCurrentPositionAsync();
-      console.log(location);
+      const {
+        coords: { latitude, longitude },
+      } = await Location.getCurrentPositionAsync();
+      this.setState({ isLoading: false });
+      // console.log(coords.latitude, coords.longitude);
     } catch (error) {
       Alert.alert("Can't find you", "So sad");
     }
   };
+
   componentDidMount() {
     this.getLocation();
   }
+
   render() {
-    return <Loading />;
+    const { isLoading } = this.state;
+    return isLoading ? <Loading /> : null;
   }
 }
 
@@ -31,3 +41,6 @@ export default class extends React.Component {
 
 //4) https://docs.expo.io/versions/v39.0.0/sdk/location/#locationrequestpermissionsasync
 //4)-1 Location.requestPermissionsAsync()
+
+//5) console.log(location) 에서 "coords": Object {...}값 확인 가능 -> const {coords} = await Location.getCurrentPositionAsync()로 변경
+//5) "altitude": 32.92097854614258, "longitude": 127.08788049968794,
