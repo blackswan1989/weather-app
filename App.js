@@ -72,7 +72,7 @@ export default class extends React.Component {
 //5) console.log(location) 에서 "coords": Object {...}값 확인 가능 -> const {coords} = await Location.getCurrentPositionAsync()로 변경
 //5)-1 "altitude": 37.5056, "longitude": 127.08788049968794,
 
-//6) http://api.openweathermap.org/data/2.5/weather?lat=37.5056&lon=127.08788049968794&appid=f2e9b29b46060b09dba2b412d6277738
+//6) http://api.openweathermap.org/data/2.5/weather?lat=37.5056&lon=127.08788049968794&appid=f2e9b29b46060b09dba2b412d6277738&units=metric
 
 /*
 NOTE console.log(data)
