@@ -1,2 +1,5 @@
-# weather-app
-React Naive by Building Weather App
+## weather-app
+
+React Native by Building Weather App
+
+- API: https://openweathermap.org/api
