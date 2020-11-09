@@ -69,4 +69,7 @@
 ## 2.2 Icons and Styling
 
 1. https://docs.expo.io/guides/icons/
-   - import { Ionicons } from '@expo/vector-icons';
+   - https://icons.expo.fyi/ : @expo/vector-icons directory.
+   - 위 사이트에서 원하는 아이콘을 가진 것을 import에 추가해준다.
+   - ex)import { FontAwesome5 } from "@expo/vector-icons";
+   - 아이콘 출력 : retrun (<FontAwesome5 name="cloud-rain" size={120} color="white" />);
