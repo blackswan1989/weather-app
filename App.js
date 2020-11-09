@@ -3,6 +3,8 @@ import { Alert } from "react-native";
 import Loading from "./Loading";
 import * as Location from "expo-location";
 
+const API_KEY = "f2e9b29b46060b09dba2b412d6277738";
+
 export default class extends React.Component {
   state = {
     isLoading: true,
@@ -43,4 +45,6 @@ export default class extends React.Component {
 //4)-1 Location.requestPermissionsAsync()
 
 //5) console.log(location) 에서 "coords": Object {...}값 확인 가능 -> const {coords} = await Location.getCurrentPositionAsync()로 변경
-//5) "altitude": 32.92097854614258, "longitude": 127.08788049968794,
+//5)-1 "altitude": 37.5056, "longitude": 127.08788049968794,
+
+//6) http://api.openweathermap.org/data/2.5/weather?lat=37.5056&lon=127.08788049968794&appid=f2e9b29b46060b09dba2b412d6277738
