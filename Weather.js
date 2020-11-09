@@ -8,54 +8,80 @@ const weatherOptions = {
   Clouds: {
     iconName: "cloud",
     gradient: ["#304352", "#d7d2cc"],
+    title: "Cloudy",
+    subtitle: "cloudy it's not that bad. enjoy your depress",
   },
   Thunderstorm: {
     iconName: "poo-storm",
     gradient: ["#29323c", "#485563"],
+    title: "Storm",
+    subtitle: "You would be better not to go outside",
   },
   Drizzle: {
     iconName: "cloud-sun-rain",
     gradient: ["#abbaab", "#ffffff"],
+    title: "Drizzle",
+    subtitle: "You're sleeping now anyway, aren't you?",
   },
   Rain: {
     iconName: "cloud-rain",
     gradient: ["#00416A", "#E4E5E6"],
+    title: "Rainy Day",
+    subtitle: "Make sure to pack an umbrella",
   },
   Snow: {
     iconName: "snowman",
     gradient: ["#CFDEF3", "#E0EAFC"],
+    title: "Snowy",
+    subtitle: "Winter is comming.",
   },
   Clear: {
     iconName: "sun",
     gradient: ["#2BC0E4", "#ffffff"],
+    title: "Clear Day",
+    subtitle: "Go outside right now!",
   },
   Mist: {
-    iconName: "cloud-download-alt",
+    iconName: "soundcloud",
     gradient: ["#2c3e50", "#808080"],
+    title: "Misty",
+    subtitle: "Drive safe. If you have a car",
   },
   Smoke: {
     iconName: "industry",
     gradient: ["#808080", "#3fada8"],
+    title: "Smoke",
+    subtitle: "Where the hell is this coming from?",
   },
   Haze: {
-    iconName: "city",
+    iconName: "cloud-moon-rain",
     gradient: ["#E684AE", "#79CBCA"],
+    title: "Haze",
+    subtitle: "Have you ever seen a haze?",
   },
   Dust: {
     iconName: "industry",
     gradient: ["#BA8B02", "#181818"],
+    title: "Dusty",
+    subtitle: "I think the Earth is sick Because of China",
   },
   Fog: {
     iconName: "soundcloud",
     gradient: ["#525252", "#DAD299"],
+    title: "Fog",
+    subtitle: "Drive safe. If you have a car",
   },
   Sand: {
     iconName: "wind",
     gradient: ["#ACBB78", "#F7F8F8"],
+    title: "Sand",
+    subtitle: "The sand is blowing. Talk to China",
   },
   Squall: {
-    iconName: "cloud-moon-rain",
+    iconName: "wind",
     gradient: ["#525252", "#3d72b4"],
+    title: "Squall",
+    subtitle: "Watch out for the Squall",
   },
 };
 
@@ -68,15 +94,18 @@ export default function Weather({ temp, condition }) {
       <StatusBar barStyle="light-content" />
       <View style={styles.halfcontainer}>
         <FontAwesome5
+          style={styles.icon}
           name={weatherOptions[condition].iconName}
           size={120}
           color="white"
         />
         <Text style={styles.temp}>{`${temp}º`}</Text>
       </View>
-      <View style={styles.halfcontainer}>
-        <Text style={styles.title}>Title</Text>
-        <Text style={styles.subtitle}>Subtitle</Text>
+      <View style={{ ...styles.halfcontainer, ...styles.textContainer }}>
+        <Text style={styles.title}>{weatherOptions[condition].title}</Text>
+        <Text style={styles.subtitle}>
+          {weatherOptions[condition].subtitle}
+        </Text>
       </View>
     </LinearGradient>
   );
@@ -113,10 +142,29 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  icon: {
+    marginTop: 80,
+  },
   temp: {
     marginTop: 15,
     fontSize: 38,
     color: "white",
     fontWeight: "bold",
+  },
+  title: {
+    fontSize: 38,
+    color: "white",
+    fontWeight: "700",
+    marginBottom: 20,
+  },
+  subtitle: {
+    fontSize: 22,
+    color: "white",
+    fontWeight: "300",
+  },
+  textContainer: {
+    paddingHorizontal: 55,
+    alignItems: "center",
+    marginBottom: 20,
   },
 });
