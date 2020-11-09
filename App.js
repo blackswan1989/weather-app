@@ -3,6 +3,7 @@ import { Alert } from "react-native";
 import Loading from "./Loading";
 import * as Location from "expo-location";
 import axios from "axios";
+import Weather from "./Weather";
 
 const API_KEY = "f2e9b29b46060b09dba2b412d6277738";
 
@@ -14,9 +15,10 @@ export default class extends React.Component {
   //URL을 fetch하기 위함
   getWeather = async (latitude, longitude) => {
     const { data } = await axios.get(
-      `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
+      `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
     );
-    console.log(data);
+    // console.log(data);
+    this.setState({ isLoading: false, temp: data.main.temp });
   };
 
   getLocation = async () => {
@@ -40,8 +42,8 @@ export default class extends React.Component {
   }
 
   render() {
-    const { isLoading } = this.state;
-    return isLoading ? <Loading /> : null;
+    const { isLoading, temp } = this.state;
+    return isLoading ? <Loading /> : <Weather temp={temp} />;
   }
 }
 
@@ -71,15 +73,15 @@ Object {
     "lat": 37.51,
     "lon": 127.09,
   },
-  "dt": 1604906337,
+  "dt": 1604906514,
   "id": 6571507,
   "main": Object {
-    "feels_like": 277.47,
+    "feels_like": 4.32,
     "humidity": 21,
     "pressure": 1025,
-    "temp": 282.15,
-    "temp_max": 282.15,
-    "temp_min": 282.15,
+    "temp": 9,
+    "temp_max": 9,
+    "temp_min": 9,
   },
   "name": "Samjeon-dong",
   "sys": Object {
@@ -103,4 +105,5 @@ Object {
     "deg": 280,
     "speed": 2.1,
   },
+}
 }*/

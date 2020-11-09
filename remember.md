@@ -45,3 +45,12 @@
 3. URL을 fetch하기 위해 getWeather = async() => {}
    - npm install axios 입력하여 설치
    - error발생시 node_bodules & package-lock 삭제후 "npm i" 로 다시 설치
+
+## 2.0 Displaying Temperature
+
+1. https://openweathermap.org/current#data
+   - For temperature in Fahrenheit use units=imperial
+   - For temperature in Celsius use units=metric (섭씨)
+   - celsius 섭씨 사용 : API_KEY주소 뒤에 &units=metric 추가해주기
+   - console.log(data)에서 temp: 9 로 바뀌는것 확인.
+   - Weather.js 생성 -> npm install prop-types
