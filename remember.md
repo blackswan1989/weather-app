@@ -76,3 +76,10 @@
 1. https://docs.expo.io/versions/latest/sdk/linear-gradient/
    - expo install expo-linear-gradient
    - Weather.js: import { LinearGradient } from 'expo-linear-gradient';
+
+## 2.4
+
+## 2.5
+
+1. http://localhost:19002/ 로컬에서 Publish -> 아이콘등은 app.json으로 수정
+   > https://expo.io/@blackswan/projects/weather-app

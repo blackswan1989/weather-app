@@ -5,7 +5,7 @@ export default function Loading() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
-      <Text style={styles.text}>Getting Weather</Text>
+      <Text style={styles.text}>Bring the weather...</Text>
     </View>
   );
 }
