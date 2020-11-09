@@ -14,11 +14,20 @@ export default class extends React.Component {
 
   //URL을 fetch하기 위함
   getWeather = async (latitude, longitude) => {
-    const { data } = await axios.get(
+    const {
+      data: {
+        main: { temp },
+        weather,
+      },
+    } = await axios.get(
       `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
     );
     // console.log(data);
-    this.setState({ isLoading: false, temp: data.main.temp });
+    this.setState({
+      isLoading: false,
+      condition: weather[0].main,
+      temp,
+    });
   };
 
   getLocation = async () => {
@@ -42,8 +51,12 @@ export default class extends React.Component {
   }
 
   render() {
-    const { isLoading, temp } = this.state;
-    return isLoading ? <Loading /> : <Weather temp={Math.round(temp)} />;
+    const { isLoading, temp, condition } = this.state;
+    return isLoading ? (
+      <Loading />
+    ) : (
+      <Weather temp={Math.round(temp)} condition={condition} />
+    );
   }
 }
 
@@ -75,11 +88,11 @@ Object {
   },
   "dt": 1604906514,
   "id": 6571507,
-  "main": Object {
+! "main": Object {
     "feels_like": 4.32,
     "humidity": 21,
     "pressure": 1025,
-    "temp": 9,
+ !  "temp": 9,
     "temp_max": 9,
     "temp_min": 9,
   },
@@ -93,7 +106,7 @@ Object {
   },
   "timezone": 32400,
   "visibility": 10000,
-  "weather": Array [
+! "weather": Array [
     Object {
       "description": "broken clouds",
       "icon": "04d",

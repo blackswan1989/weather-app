@@ -49,8 +49,24 @@
 ## 2.0 Displaying Temperature
 
 1. https://openweathermap.org/current#data
+
    - For temperature in Fahrenheit use units=imperial
    - For temperature in Celsius use units=metric (섭씨)
    - celsius 섭씨 사용 : API_KEY주소 뒤에 &units=metric 추가해주기
    - console.log(data)에서 temp: 9 로 바뀌는것 확인.
    - Weather.js 생성 -> npm install prop-types
+
+2. prop-type 설치
+   - npm install prop-types
+   - Weather.js: import PropTypes from "prop-types"; 등 추가
+
+## 2.1 Getting the Condition Names
+
+1. https://openweathermap.org/current#list
+2. https://openweathermap.org/weather-conditions
+   - Weather Conditions -> "Group names" Weather.js의 Weather.propTypes에 입력
+
+## 2.2 Icons and Styling
+
+1. https://docs.expo.io/guides/icons/
+   - import { Ionicons } from '@expo/vector-icons';
