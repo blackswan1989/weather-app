@@ -2,11 +2,11 @@
 
 React Native by Building Weather App
 
-### Platform: EXPO
+### 📱 Platform: EXPO
 
-### Framework: React Native
+### 💻 Framework: React-Native
 
-### Languge: Javascript
+### 🛠 Languge: Javascript
 
 ---
 
@@ -17,7 +17,7 @@ React Native by Building Weather App
 - GooglePlay: https://play.google.com/store/apps/details?id=host.exp.exponent&hl=ko
 - AppStore: https://apps.apple.com/kr/app/expo-client/id982107779
 
-<center><img width="150" alt="weather-app-qr" src="https://user-images.githubusercontent.com/67410919/98619429-90dcbb80-2346-11eb-9ac0-d5c4f76bdb01.png"></center>
+<center><img width="350" alt="weather-app-qr" src="https://user-images.githubusercontent.com/67410919/98619429-90dcbb80-2346-11eb-9ac0-d5c4f76bdb01.png"></center>
 
 ---
 
