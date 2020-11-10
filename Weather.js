@@ -37,7 +37,7 @@ const weatherOptions = {
   },
   Clear: {
     iconName: "sun",
-    gradient: ["#2BC0E4", "#ffffff"],
+    gradient: ["#2BC0E4", "#d8e9ef"],
     title: "Clear Day",
     subtitle: "Go outside right now!",
   },
@@ -85,7 +85,7 @@ const weatherOptions = {
   },
 };
 
-export default function Weather({ temp, condition }) {
+export default function Weather({ temp, condition, name }) {
   return (
     <LinearGradient
       colors={weatherOptions[condition].gradient}
@@ -93,6 +93,7 @@ export default function Weather({ temp, condition }) {
     >
       <StatusBar barStyle="light-content" />
       <View style={styles.halfContainerTop}>
+        <Text style={styles.name}>{name}</Text>
         <FontAwesome5
           style={styles.icon}
           name={weatherOptions[condition].iconName}
@@ -130,6 +131,7 @@ Weather.propTypes = {
     "Sand",
     "Squall",
   ]).isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -149,8 +151,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  name: {
+    marginTop: 60,
+    marginBottom: 20,
+    color: "white",
+    fontWeight: "600",
+  },
   icon: {
-    marginTop: 80,
     marginBottom: 5,
   },
   temp: {
@@ -168,7 +175,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 22,
     color: "white",
-    fontWeight: "300",
+    fontWeight: "400",
   },
   textContainer: {
     paddingHorizontal: 55,
