@@ -13,9 +13,9 @@ React Native by Building Weather App
 
 ---
 
-## QR Code
+### QR Code
 
-### Please download expo app
+#### Please download expo app
 
 - GooglePlay: https://play.google.com/store/apps/details?id=host.exp.exponent&hl=ko
 - AppStore: https://apps.apple.com/kr/app/expo-client/id982107779
@@ -24,7 +24,7 @@ React Native by Building Weather App
 
 ---
 
-## Photo
+### Photo
 
 <center><img width="200" alt="weather-app-qr" src="https://user-images.githubusercontent.com/67410919/98620958-9ee00b80-2349-11eb-9cfe-780801ac999f.png"> <img width="200" alt="weather-app-qr" src="https://user-images.githubusercontent.com/67410919/98621113-e9618800-2349-11eb-8a68-504386fe7ecf.png"></center>
 
