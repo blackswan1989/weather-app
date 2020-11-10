@@ -5,7 +5,7 @@ export default function Loading() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
-      <Text style={styles.text}>Bring the weather...</Text>
+      <Text style={styles.text}>Bring the weather...🎅🏼</Text>
     </View>
   );
 }
@@ -15,11 +15,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     paddingHorizontal: 30,
-    paddingVertical: 100,
-    backgroundColor: "#fc913a",
+    paddingVertical: 150,
+    backgroundColor: "#55967e",
   },
   text: {
-    color: "white",
+    color: "#c72e45",
     fontSize: 28,
     fontWeight: "700",
   },
