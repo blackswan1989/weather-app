@@ -6,7 +6,7 @@ React Native by Building Weather App
 
 ### 💻 Framework: React-Native
 
-### 🛠 Languge: Javascript
+### 🛠 Language: Javascript
 
 ---
 
