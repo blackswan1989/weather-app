@@ -8,14 +8,11 @@ React Native by Building Weather App
 
 ### Languge: Javascript
 
-- API: https://openweathermap.org/api
-- Expo: https://expo.io/@blackswan/projects/weather-app
-
 ---
 
 ### QR Code
 
-#### Please download expo app
+#### Please download Expo
 
 - GooglePlay: https://play.google.com/store/apps/details?id=host.exp.exponent&hl=ko
 - AppStore: https://apps.apple.com/kr/app/expo-client/id982107779
@@ -36,3 +33,8 @@ React Native by Building Weather App
 - [x] Weather guidance with icons
 - [x] Celsius temperature expression
 - [x] Description of the weather
+
+### Etc
+
+- API: https://openweathermap.org/api
+- Expo: https://expo.io/@blackswan/projects/weather-app
