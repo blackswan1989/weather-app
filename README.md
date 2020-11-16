@@ -27,7 +27,7 @@ React Native by Building Weather App
 
 ![weather-app](https://user-images.githubusercontent.com/67410919/98647661-80ddcf80-2378-11eb-8a7a-c00dc63424d0.png)
 
-![weather-app2](https://user-images.githubusercontent.com/67410919/99226748-9c8c1e80-282d-11eb-9a72-481fbe9d869b.png)
+![weather-app1](https://user-images.githubusercontent.com/67410919/99227404-86cb2900-282e-11eb-9298-2046d24b311b.png)
 
 ---
 
